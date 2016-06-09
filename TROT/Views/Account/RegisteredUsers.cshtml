@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TROT.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "RegisteredUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RegisteredUsers</h2>
+
+<table class="table">
+    <tr>
+        <th>
+           Username
+
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Phone number
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        
+    </tr>
+}
+
+</table>
